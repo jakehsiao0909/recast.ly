@@ -1,6 +1,3 @@
 
-// ReactDOM.render(<Appc videos={window.exampleVideoData}/>, document.getElementById('app'));
 
-// console.log(App);
-
-ReactDOM.render(<App video={window.exampleVideoData}/>, document.getElementById('app'));
+ReactDOM.render(<App searchYouTube={searchYouTube} Key={window.YOUTUBE_API_KEY} />, document.getElementById('app'));
