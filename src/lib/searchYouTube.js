@@ -13,14 +13,14 @@ var searchYouTube = (options, callback) => {
     },
     success: function(response) {
       console.log('Fetch suceess!');
-      console.log('fetch response: ', response)
+      console.log('fetch response: ', response);
       callback(response.items);
     },
     error: function(err) {
-      console.log('Error: ', err)
-      callback()
+      console.log('Error: ', err);
+      callback();
     }
-  })
+  });
 };
 
 window.searchYouTube = searchYouTube;

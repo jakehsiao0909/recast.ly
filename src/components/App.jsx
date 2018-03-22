@@ -8,11 +8,20 @@ class App extends React.Component {
     };
   }
 
+  searchTool(something) {
+    let obj = {
+      key: window.YOUTUBE_API_KEY, 
+      max: 5, 
+      query: something
+    };
+    this.props.searchYouTube(obj, this.initializeVideo.bind(this));
+  }
+
   componentDidMount() {
     let obj = {
       key: window.YOUTUBE_API_KEY, 
       max: 5, 
-      query: 'corgi'
+      query: 'Harlem Shake'
     };
     this.props.searchYouTube(obj, this.initializeVideo.bind(this));
   }
@@ -21,7 +30,7 @@ class App extends React.Component {
     this.setState({
       videos: videoList,
       currentVideo: videoList[0]
-    })
+    });
   }
  
   handleVideoEntryClick(target) {
@@ -35,7 +44,7 @@ class App extends React.Component {
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-            <div><h5><em>search</em> view goes here</h5></div>
+            <Search searchTool={this.searchTool.bind(this)}/>
           </div>
         </nav>
         <div className="row">
@@ -55,10 +64,3 @@ class App extends React.Component {
 // In the ES6 spec, files are "modules" and do not share a top-level scope
 // `var` declarations will only exist globally where explicitly defined
 window.App = App;
-
-  // initializeVideo(data) {
-  //   this.setState({
-  //     videos: data,
-  //     currentVideo: data[0]
-  //   })
-  // }
