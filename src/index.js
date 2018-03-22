@@ -3,4 +3,4 @@
 
 // console.log(App);
 
-ReactDOM.render(<App videos={window.exampleVideoData}/>, document.getElementById('app'));
+ReactDOM.render(<App video={window.exampleVideoData}/>, document.getElementById('app'));
